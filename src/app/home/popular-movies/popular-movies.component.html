@@ -1,0 +1,4 @@
+<h4>Peliculas populares</h4>
+<div class="row" [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" infiniteScroll>
+    <app-movie class="d-flex col-3 justify-content-center" *ngFor="let movie of movies" [type]="'popular'" [image]="imageBase + movie.backdrop_path" [name]="movie.original_title" [id]="movie.id"></app-movie>
+</div>

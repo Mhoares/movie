@@ -1,0 +1,14 @@
+<div class="card mb-3 col-6 mx-auto">
+    <h5 class="card-title text-center">{{movie?.original_title}}</h5>
+    <img class=" col-6 mx-auto d-block card-img-top" [src]="poster" alt="Card image cap">
+
+    <div class="card-body">
+        <img [src]="photo" class="rounded float-left col-5" alt="...">
+        <p class="card-text">{{movie.overview}}</p>
+
+
+    </div>
+    <div class="card-footer">
+        <app-reparto [id]="movie.id"></app-reparto>
+    </div>
+</div>

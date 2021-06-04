@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "movie-app"
+    }
+  },
+  "defaultProject": "movie-app",
+  "cli": {
+    "analytics": "b773c464-62bd-496d-b0a3-28e3b2f24806"
+  }
 }

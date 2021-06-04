@@ -1,0 +1,22 @@
+<div class="card col-3 p-0 mx-auto mt-5">
+    <div class="card-header">Login</div>
+    <div class="card-body">
+        <form [formGroup]="loginUser" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-text" formControlName="username" name="username" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-text" formControlName="password" name="password" />
+            </div>
+            <div class="form-group">
+                <button [disabled]="!loginUser.valid" class="btn btn-primary" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div *ngIf="error" class=" alert alert-danger" style="position: absolute; top: 0; right: 0;">
+    {{error.error.message}}
+</div>

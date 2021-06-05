@@ -58,13 +58,16 @@ export class AuthServiceService {
       return null;
     }
   }
-  refreshToken(){
+  isTokenExpired(){
     const  decodedToken : any = this.decodeToken(this.currenTokensValue.token) 
     const exp = decodedToken && decodedToken.exp;
+    return Math.round( Date.now()/1000) > exp
+  }
+
+  getRefreshToken(){
     const refresh_token = this.currenTokensValue.refresh_token
     const url = "http://161.35.140.236:9005/api/auth/refresh"
     const options = {headers: {'Content-Type': 'application/json'}};
-     if (Date.now() > exp){
       return this.http.post(url, JSON.stringify({refresh_token}), options)
       .pipe(
         map((res : any) => {
@@ -77,7 +80,7 @@ export class AuthServiceService {
     catchError((error: HttpErrorResponse) => {return throwError( error)}))
     ;
 
-     }
+
 
   }
 
